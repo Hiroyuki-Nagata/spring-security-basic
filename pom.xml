@@ -5,9 +5,9 @@
   <groupId>jp.co.security</groupId>
   <artifactId>sec</artifactId>
   <name>spring-security</name>
-
   <packaging>war</packaging>
   <version>1.0.0-BUILD-SNAPSHOT</version>
+
   <properties>
     <java-version>1.8</java-version>
     <spring.version>4.1.7.RELEASE</spring.version>
@@ -15,6 +15,7 @@
     <aspectj.version>1.6.10</aspectj.version>
     <slf4j.version>1.6.6</slf4j.version>
     <jetty.version>9.3.6.v20151106</jetty.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
@@ -143,6 +144,7 @@
     <finalName>sec</finalName>
 
     <plugins>
+      <!-- for jetty -->
       <plugin>
 	<groupId>org.eclipse.jetty</groupId>
 	<artifactId>jetty-maven-plugin</artifactId>
@@ -157,38 +159,12 @@
 	</configuration>
       </plugin>
       <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <version>2.9</version>
-        <configuration>
-          <additionalProjectnatures>
-            <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-          </additionalProjectnatures>
-          <additionalBuildcommands>
-            <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-          </additionalBuildcommands>
-          <downloadSources>true</downloadSources>
-          <downloadJavadocs>true</downloadJavadocs>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.5.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-          <compilerArgument>-Xlint:all</compilerArgument>
-          <showWarnings>true</showWarnings>
-          <showDeprecation>true</showDeprecation>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
-        <configuration>
-          <mainClass>org.test.int1.Main</mainClass>
-        </configuration>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<configuration>
+	  <source>1.8</source>
+	  <target>1.8</target>
+	</configuration>
       </plugin>
     </plugins>
   </build>

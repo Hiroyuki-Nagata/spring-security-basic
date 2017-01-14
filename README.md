@@ -1,6 +1,24 @@
-How to use
-本プロジェクトをCloneした後、以下の設定をしてください。
-プロジェクトを右クリック > Configure > Convert to maven project
+# Spring-security-basic
 
-その後、ビルドしてeclipse tomcatで実行すると本プロジェクトは動作します。
+## How to use
 
+* Mavenをインストールして以下のコマンド：
+
+```
+$ mvn install
+```
+
+* ローカルでの起動テスト：
+
+```
+$ mvn jetty:run
+```
+
+
+## Heroku
+
+* heroku-toolbeltをインストールして以下のコマンド：
+
+```
+$ heroku deploy:war --war target/sec.war --app ${application-id}
+```
