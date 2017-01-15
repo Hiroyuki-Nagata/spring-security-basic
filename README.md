@@ -8,10 +8,12 @@
 $ mvn install
 ```
 
-* ローカルでの起動テスト：
+* ローカルでの起動テスト
+* ローカルにRedisを用意して `REDIS_HOST` `REDIS_PORT` の環境変数をそれぞれ指定してください
 
 ```
 $ mvn jetty:run
+$ REDIS_HOST=localhost REDIS_PORT=6379 mvn install jetty:run
 ```
 
 

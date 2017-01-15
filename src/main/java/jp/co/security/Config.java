@@ -16,6 +16,7 @@
 
 package jp.co.security;
 
+import javax.annotation.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -31,9 +32,12 @@ import org.springframework.session.web.http.DefaultCookieSerializer;
 @EnableRedisHttpSession
 public class Config {
 
+	@Resource
+	private LettuceConnectionFactory lettuceConnectionFactory;
+
 	@Bean
 	public LettuceConnectionFactory connectionFactory() {
-		return new LettuceConnectionFactory();
+		return lettuceConnectionFactory;
 	}
 
 	@Bean
